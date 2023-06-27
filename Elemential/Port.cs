@@ -1,16 +1,18 @@
-﻿using System.Text.RegularExpressions;
+﻿using System;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace Elemential
 {
     public partial class Port : Form
     {
-        private Regex ipRegex;
+        private readonly Regex ipRegex;
 
         public Port(char type)
         {
             InitializeComponent();
 
-            ipRegex = new Regex(@"^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$");
+            ipRegex = new(@"^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$");
             if (type == 'H')
                 lblPort.Text = "Insira a porta para o jogo:";
             else if (type == 'C')

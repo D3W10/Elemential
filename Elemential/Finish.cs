@@ -1,4 +1,7 @@
 ﻿using Elemential.Properties;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace Elemential
 {
@@ -18,11 +21,6 @@ namespace Elemential
                 pbFinish.Image = Resources.ResourceManager.GetObject("Bang") as Bitmap;
                 lblFinish.Text = "Perdeste. Continua a tentar!";
             }
-        }
-
-        private void btnOk_Click(object sender, EventArgs e)
-        {
-            Close();
         }
     }
 }

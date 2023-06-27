@@ -1,5 +1,11 @@
 using Elemential.Properties;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Runtime.InteropServices;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace Elemential
 {
@@ -7,14 +13,14 @@ namespace Elemential
     {
         private int slotPage;
         private int opponentCards;
-        private char type;
+        private readonly char type;
         private string cardChoosen;
-        private Deck deck;
+        private readonly Deck deck;
         private List<string> deckCards;
         private List<string> specialCards;
         private Thread thread;
-        private PictureBox[] pictureSlots;
-        private PictureBox[] oPictureSlots;
+        private readonly PictureBox[] pictureSlots;
+        private readonly PictureBox[] oPictureSlots;
 
         public Game(char type)
         {
@@ -29,8 +35,6 @@ namespace Elemential
             oPictureSlots = new PictureBox[] { pbOSlot1, pbOSlot2, pbOSlot3, pbOSlot4, pbOSlot5, pbOSlot6, pbOSlot7, pbOSlot8, pbOSlot9 };
 
             lblPlayer.Text = type == 'H' ? "Jogador 1" : "Jogador 2";
-            pMe.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, pMe.Width, pMe.Height, 20, 20));
-            pOpponent.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, pOpponent.Width, pOpponent.Height, 20, 20));
         }
 
         private void Game_Load(object sender, EventArgs e)
@@ -40,12 +44,15 @@ namespace Elemential
             else if (type == 'J')
                 thread = new Thread(ClientThread);
 
+            thread.IsBackground = true;
             thread.Start();
         }
 
         private void Game_FormClosing(object sender, FormClosingEventArgs e)
         {
             thread.Interrupt();
+            Program.Listener?.Stop();
+            Program.Client.Close();
         }
 
         private void EnterCard(object sender, EventArgs e)
@@ -74,8 +81,8 @@ namespace Elemential
         {
             int startSize = 9 * page, pageSize = deckCards.Count <= 9 * (page + 1) ? deckCards.Count : 9 * (page + 1);
 
-            SetControlVisibility(pbForward, false);
-            SetControlVisibility(pbBack, false);
+            SetControlVisibility(btnForward, false);
+            SetControlVisibility(btnBack, false);
 
             foreach (PictureBox pb in pictureSlots)
                 RemoveCardSlots(pb);
@@ -84,9 +91,9 @@ namespace Elemential
                 CardSlotUpdate(pictureSlots[i - 9 * page], deckCards, i);
 
             if (pageSize != deckCards.Count)
-                SetControlVisibility(pbForward, true);
+                SetControlVisibility(btnForward, true);
             if (startSize != 0)
-                SetControlVisibility(pbBack, true);
+                SetControlVisibility(btnBack, true);
         }
 
         private void UpdateOpponentSlots(int opponent)
@@ -102,12 +109,12 @@ namespace Elemential
             }
         }
 
-        private void pbForward_Click(object sender, EventArgs e)
+        private void btnForward_Click(object sender, EventArgs e)
         {
             UpdateSlots(++slotPage);
         }
 
-        private void pbBack_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
             UpdateSlots(--slotPage);
         }
@@ -171,8 +178,8 @@ namespace Elemential
 
         private void SpecialSlots()
         {
-            pbForward.Visible = false;
-            pbBack.Visible = false;
+            btnForward.Visible = false;
+            btnBack.Visible = false;
 
             foreach (PictureBox pb in pictureSlots)
                 RemoveCardSlots(pb);
@@ -318,7 +325,7 @@ namespace Elemential
                     SetControlVisibility(lblMyTurn, true);
                     while (cardChoosen == null)
                         continue;
-                        
+
                     networkWriter.WriteLine(cardChoosen);
                     networkWriter.Flush();
                     SetPictureBoxImage(pbMe, cardChoosen);
@@ -339,9 +346,15 @@ namespace Elemential
                         SetControlVisibility(lblMyTurn, true);
 
                         if (currentWinner == 'H')
-                            pMe.BackColor = Color.FromArgb(255, 106, 188, 140);
+                        {
+                            btnMe.BackColor = Color.FromArgb(255, 106, 188, 140);
+                            pbMe.BackColor = Color.FromArgb(255, 106, 188, 140);
+                        }
                         else if (currentWinner == 'C')
-                            pOpponent.BackColor = Color.FromArgb(255, 106, 188, 140);
+                        {
+                            btnOpponent.BackColor = Color.FromArgb(255, 106, 188, 140);
+                            pbOpponent.BackColor = Color.FromArgb(255, 106, 188, 140);
+                        }
 
                         SpecialSlots();
                         while (cardChoosen == null)
@@ -349,8 +362,10 @@ namespace Elemential
                         hostSpecialCard = cardChoosen;
                         cardChoosen = null;
 
-                        pMe.BackColor = Color.Transparent;
-                        pOpponent.BackColor = Color.Transparent;
+                        btnMe.BackColor = SystemColors.Control;
+                        pbMe.BackColor = SystemColors.Control;
+                        btnOpponent.BackColor = SystemColors.Control;
+                        pbOpponent.BackColor = SystemColors.Control;
                         SetControlVisibility(lblMyTurn, false);
 
                         UpdateSprites(true, hostSpecialCard);
@@ -476,9 +491,15 @@ namespace Elemential
                         SetControlVisibility(lblMyTurn, true);
 
                         if (currentWinner == 'C')
-                            pMe.BackColor = Color.FromArgb(255, 106, 188, 140);
+                        {
+                            btnMe.BackColor = Color.FromArgb(255, 106, 188, 140);
+                            pbMe.BackColor = Color.FromArgb(255, 106, 188, 140);
+                        }
                         else if (currentWinner == 'H')
-                            pOpponent.BackColor = Color.FromArgb(255, 106, 188, 140);
+                        {
+                            btnOpponent.BackColor = Color.FromArgb(255, 106, 188, 140);
+                            pbOpponent.BackColor = Color.FromArgb(255, 106, 188, 140);
+                        }
 
                         SpecialSlots();
                         while (cardChoosen == null)
@@ -486,8 +507,10 @@ namespace Elemential
                         clientSpecialCard = cardChoosen;
                         cardChoosen = null;
 
-                        pMe.BackColor = Color.Transparent;
-                        pOpponent.BackColor = Color.Transparent;
+                        btnMe.BackColor = SystemColors.Control;
+                        pbMe.BackColor = SystemColors.Control;
+                        btnOpponent.BackColor = SystemColors.Control;
+                        pbOpponent.BackColor = SystemColors.Control;
                         SetControlVisibility(lblMyTurn, false);
 
                         UpdateSprites(true, clientSpecialCard);

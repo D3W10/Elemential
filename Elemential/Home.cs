@@ -1,27 +1,34 @@
-﻿namespace Elemential
+﻿using Elemential.Components;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace Elemential
 {
     public partial class Home : Form
     {
         private bool closing;
+        private readonly Color defaultBtnBorder;
 
         public Home()
         {
             InitializeComponent();
 
             closing = false;
+            defaultBtnBorder = btnHost.BorderColor;
         }
 
         private void EnterOption(object sender, EventArgs e)
         {
-            ((Label)sender).ForeColor = Color.FromArgb(255, 51, 215, 240);
+            ((RoundedButton)sender).BorderColor = Color.Turquoise;
         }
 
         private void LeaveOption(object sender, EventArgs e)
         {
-            ((Label)sender).ForeColor = Color.Black;
+            ((RoundedButton)sender).BorderColor = defaultBtnBorder;
         }
 
-        private void lblStart_Click(object sender, EventArgs e)
+        private void btnHost_Click(object sender, EventArgs e)
         {
             if (new Port('H').ShowDialog() == DialogResult.OK)
             {
@@ -31,7 +38,7 @@
             }
         }
 
-        private void lblJoin_Click(object sender, EventArgs e)
+        private void btnJoin_Click(object sender, EventArgs e)
         {
             if (new Port('C').ShowDialog() == DialogResult.OK)
             {
@@ -41,14 +48,14 @@
             }
         }
 
-        private void lblRules_Click(object sender, EventArgs e)
+        private void btnRules_Click(object sender, EventArgs e)
         {
             Hide();
             new Rules(' ').ShowDialog();
             Show();
         }
 
-        private void lblLeave_Click(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
             LeavingGame();
         }

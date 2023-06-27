@@ -1,12 +1,15 @@
-﻿namespace Elemential
+﻿using System;
+using System.Collections.Generic;
+
+namespace Elemential
 {
     public class Deck
     {
-        private Random randomChooser;
-        private Stack<string> normalStack;
-        private Stack<string> specialStack;
-        private List<string> usedCards;
-        private List<string> usedSpecialCards;
+        private readonly Random randomChooser;
+        private readonly Stack<string> normalStack;
+        private readonly Stack<string> specialStack;
+        private readonly List<string> usedCards;
+        private readonly List<string> usedSpecialCards;
 
         public Deck()
         {

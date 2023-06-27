@@ -1,4 +1,6 @@
-﻿namespace Elemential
+﻿using System.Windows.Forms;
+
+namespace Elemential
 {
     partial class Finish
     {
@@ -29,63 +31,61 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Finish));
-            this.pbFinish = new System.Windows.Forms.PictureBox();
-            this.lblFinish = new System.Windows.Forms.Label();
-            this.btnOk = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pbFinish)).BeginInit();
-            this.SuspendLayout();
+            pbFinish = new PictureBox();
+            lblFinish = new Label();
+            btnOk = new Button();
+            ((System.ComponentModel.ISupportInitialize)pbFinish).BeginInit();
+            SuspendLayout();
             // 
             // pbFinish
             // 
-            this.pbFinish.Location = new System.Drawing.Point(12, 12);
-            this.pbFinish.Name = "pbFinish";
-            this.pbFinish.Size = new System.Drawing.Size(60, 60);
-            this.pbFinish.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbFinish.TabIndex = 0;
-            this.pbFinish.TabStop = false;
+            pbFinish.Location = new System.Drawing.Point(12, 12);
+            pbFinish.Name = "pbFinish";
+            pbFinish.Size = new System.Drawing.Size(60, 60);
+            pbFinish.SizeMode = PictureBoxSizeMode.Zoom;
+            pbFinish.TabIndex = 0;
+            pbFinish.TabStop = false;
             // 
             // lblFinish
             // 
-            this.lblFinish.AutoSize = true;
-            this.lblFinish.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblFinish.Location = new System.Drawing.Point(82, 12);
-            this.lblFinish.Name = "lblFinish";
-            this.lblFinish.Size = new System.Drawing.Size(40, 21);
-            this.lblFinish.TabIndex = 2;
-            this.lblFinish.Text = "null";
+            lblFinish.AutoSize = true;
+            lblFinish.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            lblFinish.Location = new System.Drawing.Point(82, 12);
+            lblFinish.Name = "lblFinish";
+            lblFinish.Size = new System.Drawing.Size(40, 21);
+            lblFinish.TabIndex = 0;
+            lblFinish.Text = "null";
             // 
             // btnOk
             // 
-            this.btnOk.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnOk.Location = new System.Drawing.Point(304, 49);
-            this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(75, 23);
-            this.btnOk.TabIndex = 3;
-            this.btnOk.Text = "OK";
-            this.btnOk.UseVisualStyleBackColor = true;
-            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
+            btnOk.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnOk.Location = new System.Drawing.Point(304, 49);
+            btnOk.Name = "btnOk";
+            btnOk.Size = new System.Drawing.Size(75, 23);
+            btnOk.TabIndex = 0;
+            btnOk.Text = "OK";
+            btnOk.UseVisualStyleBackColor = true;
             // 
             // Finish
             // 
-            this.AcceptButton = this.btnOk;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(394, 86);
-            this.Controls.Add(this.btnOk);
-            this.Controls.Add(this.lblFinish);
-            this.Controls.Add(this.pbFinish);
-            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "Finish";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Elemential";
-            ((System.ComponentModel.ISupportInitialize)(this.pbFinish)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AcceptButton = btnOk;
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(394, 86);
+            Controls.Add(btnOk);
+            Controls.Add(lblFinish);
+            Controls.Add(pbFinish);
+            Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "Finish";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Elemential";
+            ((System.ComponentModel.ISupportInitialize)pbFinish).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

@@ -1,11 +1,14 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
 using System.Net.Sockets;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Elemential
 {
     public partial class Rules : Form
     {
-        private char type;
+        private readonly char type;
         private bool closing;
 
         public Rules(char type)
@@ -15,6 +18,7 @@ namespace Elemential
             this.type = type;
             closing = false;
             Program.Next = ' ';
+
             if (type != ' ')
             {
                 lblGame.Visible = true;
@@ -77,7 +81,7 @@ namespace Elemential
             {
                 task.Start();
                 task.ContinueWith((tsk) => CloseRules());
-            } 
+            }
         }
 
         private void Rules_FormClosing(object sender, FormClosingEventArgs e)
@@ -85,6 +89,7 @@ namespace Elemential
             if (type == 'H')
             {
                 closing = true;
+
                 try
                 {
                     Program.Listener.Stop();

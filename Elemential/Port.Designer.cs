@@ -1,4 +1,6 @@
-﻿namespace Elemential
+﻿using System.Windows.Forms;
+
+namespace Elemential
 {
     partial class Port
     {
@@ -29,91 +31,89 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Port));
-            this.pbPort = new System.Windows.Forms.PictureBox();
-            this.tbPort = new System.Windows.Forms.TextBox();
-            this.lblPort = new System.Windows.Forms.Label();
-            this.btnJoin = new System.Windows.Forms.Button();
-            this.tbAddress = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPort)).BeginInit();
-            this.SuspendLayout();
+            pbPort = new PictureBox();
+            tbPort = new TextBox();
+            lblPort = new Label();
+            btnJoin = new Button();
+            tbAddress = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)pbPort).BeginInit();
+            SuspendLayout();
             // 
             // pbPort
             // 
-            this.pbPort.Image = global::Elemential.Properties.Resources.port;
-            this.pbPort.Location = new System.Drawing.Point(12, 12);
-            this.pbPort.Name = "pbPort";
-            this.pbPort.Size = new System.Drawing.Size(60, 60);
-            this.pbPort.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbPort.TabIndex = 0;
-            this.pbPort.TabStop = false;
+            pbPort.Image = Properties.Resources.port;
+            pbPort.Location = new System.Drawing.Point(12, 12);
+            pbPort.Name = "pbPort";
+            pbPort.Size = new System.Drawing.Size(60, 60);
+            pbPort.SizeMode = PictureBoxSizeMode.Zoom;
+            pbPort.TabIndex = 0;
+            pbPort.TabStop = false;
             // 
             // tbPort
             // 
-            this.tbPort.Location = new System.Drawing.Point(85, 49);
-            this.tbPort.MaxLength = 5;
-            this.tbPort.Name = "tbPort";
-            this.tbPort.PlaceholderText = "Porta";
-            this.tbPort.Size = new System.Drawing.Size(75, 23);
-            this.tbPort.TabIndex = 1;
-            this.tbPort.TextChanged += new System.EventHandler(this.tbPort_TextChanged);
-            this.tbPort.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxKeyPress);
+            tbPort.Location = new System.Drawing.Point(85, 49);
+            tbPort.MaxLength = 5;
+            tbPort.Name = "tbPort";
+            tbPort.PlaceholderText = "Porta";
+            tbPort.Size = new System.Drawing.Size(75, 23);
+            tbPort.TabIndex = 0;
+            tbPort.TextChanged += tbPort_TextChanged;
+            tbPort.KeyPress += TextBoxKeyPress;
             // 
             // lblPort
             // 
-            this.lblPort.AutoSize = true;
-            this.lblPort.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblPort.Location = new System.Drawing.Point(82, 12);
-            this.lblPort.Name = "lblPort";
-            this.lblPort.Size = new System.Drawing.Size(205, 21);
-            this.lblPort.TabIndex = 2;
-            this.lblPort.Text = "Insira a porta para o jogo:";
+            lblPort.AutoSize = true;
+            lblPort.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            lblPort.Location = new System.Drawing.Point(82, 12);
+            lblPort.Name = "lblPort";
+            lblPort.Size = new System.Drawing.Size(205, 21);
+            lblPort.TabIndex = 0;
+            lblPort.Text = "Insira a porta para o jogo:";
             // 
             // btnJoin
             // 
-            this.btnJoin.Enabled = false;
-            this.btnJoin.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnJoin.Location = new System.Drawing.Point(317, 49);
-            this.btnJoin.Name = "btnJoin";
-            this.btnJoin.Size = new System.Drawing.Size(75, 23);
-            this.btnJoin.TabIndex = 3;
-            this.btnJoin.Text = "Entrar";
-            this.btnJoin.UseVisualStyleBackColor = true;
-            this.btnJoin.Click += new System.EventHandler(this.btnJoin_Click);
+            btnJoin.Enabled = false;
+            btnJoin.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnJoin.Location = new System.Drawing.Point(317, 49);
+            btnJoin.Name = "btnJoin";
+            btnJoin.Size = new System.Drawing.Size(75, 23);
+            btnJoin.TabIndex = 2;
+            btnJoin.Text = "Entrar";
+            btnJoin.UseVisualStyleBackColor = true;
+            btnJoin.Click += btnJoin_Click;
             // 
             // tbAddress
             // 
-            this.tbAddress.Location = new System.Drawing.Point(170, 50);
-            this.tbAddress.MaxLength = 15;
-            this.tbAddress.Name = "tbAddress";
-            this.tbAddress.PlaceholderText = "Endereço IP";
-            this.tbAddress.Size = new System.Drawing.Size(110, 23);
-            this.tbAddress.TabIndex = 4;
-            this.tbAddress.Visible = false;
-            this.tbAddress.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxKeyPress);
+            tbAddress.Location = new System.Drawing.Point(170, 50);
+            tbAddress.MaxLength = 15;
+            tbAddress.Name = "tbAddress";
+            tbAddress.PlaceholderText = "Endereço IP";
+            tbAddress.Size = new System.Drawing.Size(110, 23);
+            tbAddress.TabIndex = 1;
+            tbAddress.Visible = false;
+            tbAddress.KeyPress += TextBoxKeyPress;
             // 
             // Port
             // 
-            this.AcceptButton = this.btnJoin;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(404, 86);
-            this.Controls.Add(this.tbAddress);
-            this.Controls.Add(this.btnJoin);
-            this.Controls.Add(this.lblPort);
-            this.Controls.Add(this.tbPort);
-            this.Controls.Add(this.pbPort);
-            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "Port";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Elemential";
-            ((System.ComponentModel.ISupportInitialize)(this.pbPort)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AcceptButton = btnJoin;
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(404, 86);
+            Controls.Add(tbAddress);
+            Controls.Add(btnJoin);
+            Controls.Add(lblPort);
+            Controls.Add(tbPort);
+            Controls.Add(pbPort);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "Port";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Elemential";
+            ((System.ComponentModel.ISupportInitialize)pbPort).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

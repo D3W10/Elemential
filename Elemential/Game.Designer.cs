@@ -1,4 +1,6 @@
-﻿namespace Elemential
+﻿using System.Windows.Forms;
+
+namespace Elemential
 {
     partial class Game
     {
@@ -29,545 +31,554 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game));
-            this.pbSlot1 = new System.Windows.Forms.PictureBox();
-            this.pbSlot2 = new System.Windows.Forms.PictureBox();
-            this.pbSlot3 = new System.Windows.Forms.PictureBox();
-            this.pbSlot4 = new System.Windows.Forms.PictureBox();
-            this.pbSlot5 = new System.Windows.Forms.PictureBox();
-            this.pbSlot6 = new System.Windows.Forms.PictureBox();
-            this.pbSlot7 = new System.Windows.Forms.PictureBox();
-            this.pbSlot8 = new System.Windows.Forms.PictureBox();
-            this.pbSlot9 = new System.Windows.Forms.PictureBox();
-            this.pbOpponent = new System.Windows.Forms.PictureBox();
-            this.pbMe = new System.Windows.Forms.PictureBox();
-            this.pbBack = new System.Windows.Forms.PictureBox();
-            this.pbForward = new System.Windows.Forms.PictureBox();
-            this.lblPlayer = new System.Windows.Forms.Label();
-            this.pbOSlot1 = new System.Windows.Forms.PictureBox();
-            this.pbOSlot2 = new System.Windows.Forms.PictureBox();
-            this.pbOSlot3 = new System.Windows.Forms.PictureBox();
-            this.pbOSlot4 = new System.Windows.Forms.PictureBox();
-            this.pbOSlot5 = new System.Windows.Forms.PictureBox();
-            this.pbOSlot6 = new System.Windows.Forms.PictureBox();
-            this.pbOSlot7 = new System.Windows.Forms.PictureBox();
-            this.pbOSlot8 = new System.Windows.Forms.PictureBox();
-            this.pbOSlot9 = new System.Windows.Forms.PictureBox();
-            this.lblMyTurn = new System.Windows.Forms.Label();
-            this.pbEnergy = new System.Windows.Forms.PictureBox();
-            this.pbNature = new System.Windows.Forms.PictureBox();
-            this.pbWind = new System.Windows.Forms.PictureBox();
-            this.pbSparkle = new System.Windows.Forms.PictureBox();
-            this.pOpponent = new System.Windows.Forms.Panel();
-            this.pMe = new System.Windows.Forms.Panel();
-            this.pbWinLose = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSlot1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSlot2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSlot3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSlot4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSlot5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSlot6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSlot7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSlot8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSlot9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbOpponent)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMe)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBack)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbForward)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbOSlot1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbOSlot2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbOSlot3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbOSlot4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbOSlot5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbOSlot6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbOSlot7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbOSlot8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbOSlot9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbEnergy)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbNature)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbWind)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSparkle)).BeginInit();
-            this.pOpponent.SuspendLayout();
-            this.pMe.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbWinLose)).BeginInit();
-            this.SuspendLayout();
+            pbSlot1 = new PictureBox();
+            pbSlot2 = new PictureBox();
+            pbSlot3 = new PictureBox();
+            pbSlot4 = new PictureBox();
+            pbSlot5 = new PictureBox();
+            pbSlot6 = new PictureBox();
+            pbSlot7 = new PictureBox();
+            pbSlot8 = new PictureBox();
+            pbSlot9 = new PictureBox();
+            pbOpponent = new PictureBox();
+            pbMe = new PictureBox();
+            lblPlayer = new Label();
+            pbOSlot1 = new PictureBox();
+            pbOSlot2 = new PictureBox();
+            pbOSlot3 = new PictureBox();
+            pbOSlot4 = new PictureBox();
+            pbOSlot5 = new PictureBox();
+            pbOSlot6 = new PictureBox();
+            pbOSlot7 = new PictureBox();
+            pbOSlot8 = new PictureBox();
+            pbOSlot9 = new PictureBox();
+            lblMyTurn = new Label();
+            pbEnergy = new PictureBox();
+            pbNature = new PictureBox();
+            pbWind = new PictureBox();
+            pbSparkle = new PictureBox();
+            pbWinLose = new PictureBox();
+            btnForward = new Components.RoundedButton();
+            btnBack = new Components.RoundedButton();
+            btnOpponent = new Components.RoundedButton();
+            btnMe = new Components.RoundedButton();
+            ((System.ComponentModel.ISupportInitialize)pbSlot1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbSlot2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbSlot3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbSlot4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbSlot5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbSlot6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbSlot7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbSlot8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbSlot9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbOpponent).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbMe).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbOSlot1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbOSlot2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbOSlot3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbOSlot4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbOSlot5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbOSlot6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbOSlot7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbOSlot8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbOSlot9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbEnergy).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbNature).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbWind).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbSparkle).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbWinLose).BeginInit();
+            SuspendLayout();
             // 
             // pbSlot1
             // 
-            this.pbSlot1.BackColor = System.Drawing.Color.Transparent;
-            this.pbSlot1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbSlot1.Image = global::Elemential.Properties.Resources.Place;
-            this.pbSlot1.Location = new System.Drawing.Point(90, 451);
-            this.pbSlot1.Name = "pbSlot1";
-            this.pbSlot1.Size = new System.Drawing.Size(129, 200);
-            this.pbSlot1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbSlot1.TabIndex = 0;
-            this.pbSlot1.TabStop = false;
-            this.pbSlot1.Visible = false;
-            this.pbSlot1.Click += new System.EventHandler(this.CardClick);
-            this.pbSlot1.MouseEnter += new System.EventHandler(this.EnterCard);
-            this.pbSlot1.MouseLeave += new System.EventHandler(this.LeaveCard);
+            pbSlot1.BackColor = System.Drawing.Color.Transparent;
+            pbSlot1.Cursor = Cursors.Hand;
+            pbSlot1.Image = Properties.Resources.Place;
+            pbSlot1.Location = new System.Drawing.Point(90, 451);
+            pbSlot1.Name = "pbSlot1";
+            pbSlot1.Size = new System.Drawing.Size(129, 200);
+            pbSlot1.SizeMode = PictureBoxSizeMode.Zoom;
+            pbSlot1.TabIndex = 0;
+            pbSlot1.TabStop = false;
+            pbSlot1.Visible = false;
+            pbSlot1.Click += CardClick;
+            pbSlot1.MouseEnter += EnterCard;
+            pbSlot1.MouseLeave += LeaveCard;
             // 
             // pbSlot2
             // 
-            this.pbSlot2.BackColor = System.Drawing.Color.Transparent;
-            this.pbSlot2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbSlot2.Image = global::Elemential.Properties.Resources.Place;
-            this.pbSlot2.Location = new System.Drawing.Point(174, 451);
-            this.pbSlot2.Name = "pbSlot2";
-            this.pbSlot2.Size = new System.Drawing.Size(129, 200);
-            this.pbSlot2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbSlot2.TabIndex = 1;
-            this.pbSlot2.TabStop = false;
-            this.pbSlot2.Visible = false;
-            this.pbSlot2.Click += new System.EventHandler(this.CardClick);
-            this.pbSlot2.MouseEnter += new System.EventHandler(this.EnterCard);
-            this.pbSlot2.MouseLeave += new System.EventHandler(this.LeaveCard);
+            pbSlot2.BackColor = System.Drawing.Color.Transparent;
+            pbSlot2.Cursor = Cursors.Hand;
+            pbSlot2.Image = Properties.Resources.Place;
+            pbSlot2.Location = new System.Drawing.Point(174, 451);
+            pbSlot2.Name = "pbSlot2";
+            pbSlot2.Size = new System.Drawing.Size(129, 200);
+            pbSlot2.SizeMode = PictureBoxSizeMode.Zoom;
+            pbSlot2.TabIndex = 1;
+            pbSlot2.TabStop = false;
+            pbSlot2.Visible = false;
+            pbSlot2.Click += CardClick;
+            pbSlot2.MouseEnter += EnterCard;
+            pbSlot2.MouseLeave += LeaveCard;
             // 
             // pbSlot3
             // 
-            this.pbSlot3.BackColor = System.Drawing.Color.Transparent;
-            this.pbSlot3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbSlot3.Image = global::Elemential.Properties.Resources.Place;
-            this.pbSlot3.Location = new System.Drawing.Point(258, 451);
-            this.pbSlot3.Name = "pbSlot3";
-            this.pbSlot3.Size = new System.Drawing.Size(129, 200);
-            this.pbSlot3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbSlot3.TabIndex = 2;
-            this.pbSlot3.TabStop = false;
-            this.pbSlot3.Visible = false;
-            this.pbSlot3.Click += new System.EventHandler(this.CardClick);
-            this.pbSlot3.MouseEnter += new System.EventHandler(this.EnterCard);
-            this.pbSlot3.MouseLeave += new System.EventHandler(this.LeaveCard);
+            pbSlot3.BackColor = System.Drawing.Color.Transparent;
+            pbSlot3.Cursor = Cursors.Hand;
+            pbSlot3.Image = Properties.Resources.Place;
+            pbSlot3.Location = new System.Drawing.Point(258, 451);
+            pbSlot3.Name = "pbSlot3";
+            pbSlot3.Size = new System.Drawing.Size(129, 200);
+            pbSlot3.SizeMode = PictureBoxSizeMode.Zoom;
+            pbSlot3.TabIndex = 2;
+            pbSlot3.TabStop = false;
+            pbSlot3.Visible = false;
+            pbSlot3.Click += CardClick;
+            pbSlot3.MouseEnter += EnterCard;
+            pbSlot3.MouseLeave += LeaveCard;
             // 
             // pbSlot4
             // 
-            this.pbSlot4.BackColor = System.Drawing.Color.Transparent;
-            this.pbSlot4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbSlot4.Image = global::Elemential.Properties.Resources.Place;
-            this.pbSlot4.Location = new System.Drawing.Point(342, 451);
-            this.pbSlot4.Name = "pbSlot4";
-            this.pbSlot4.Size = new System.Drawing.Size(129, 200);
-            this.pbSlot4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbSlot4.TabIndex = 3;
-            this.pbSlot4.TabStop = false;
-            this.pbSlot4.Visible = false;
-            this.pbSlot4.Click += new System.EventHandler(this.CardClick);
-            this.pbSlot4.MouseEnter += new System.EventHandler(this.EnterCard);
-            this.pbSlot4.MouseLeave += new System.EventHandler(this.LeaveCard);
+            pbSlot4.BackColor = System.Drawing.Color.Transparent;
+            pbSlot4.Cursor = Cursors.Hand;
+            pbSlot4.Image = Properties.Resources.Place;
+            pbSlot4.Location = new System.Drawing.Point(342, 451);
+            pbSlot4.Name = "pbSlot4";
+            pbSlot4.Size = new System.Drawing.Size(129, 200);
+            pbSlot4.SizeMode = PictureBoxSizeMode.Zoom;
+            pbSlot4.TabIndex = 3;
+            pbSlot4.TabStop = false;
+            pbSlot4.Visible = false;
+            pbSlot4.Click += CardClick;
+            pbSlot4.MouseEnter += EnterCard;
+            pbSlot4.MouseLeave += LeaveCard;
             // 
             // pbSlot5
             // 
-            this.pbSlot5.BackColor = System.Drawing.Color.Transparent;
-            this.pbSlot5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbSlot5.Image = global::Elemential.Properties.Resources.Place;
-            this.pbSlot5.Location = new System.Drawing.Point(426, 451);
-            this.pbSlot5.Name = "pbSlot5";
-            this.pbSlot5.Size = new System.Drawing.Size(129, 200);
-            this.pbSlot5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbSlot5.TabIndex = 4;
-            this.pbSlot5.TabStop = false;
-            this.pbSlot5.Visible = false;
-            this.pbSlot5.Click += new System.EventHandler(this.CardClick);
-            this.pbSlot5.MouseEnter += new System.EventHandler(this.EnterCard);
-            this.pbSlot5.MouseLeave += new System.EventHandler(this.LeaveCard);
+            pbSlot5.BackColor = System.Drawing.Color.Transparent;
+            pbSlot5.Cursor = Cursors.Hand;
+            pbSlot5.Image = Properties.Resources.Place;
+            pbSlot5.Location = new System.Drawing.Point(426, 451);
+            pbSlot5.Name = "pbSlot5";
+            pbSlot5.Size = new System.Drawing.Size(129, 200);
+            pbSlot5.SizeMode = PictureBoxSizeMode.Zoom;
+            pbSlot5.TabIndex = 4;
+            pbSlot5.TabStop = false;
+            pbSlot5.Visible = false;
+            pbSlot5.Click += CardClick;
+            pbSlot5.MouseEnter += EnterCard;
+            pbSlot5.MouseLeave += LeaveCard;
             // 
             // pbSlot6
             // 
-            this.pbSlot6.BackColor = System.Drawing.Color.Transparent;
-            this.pbSlot6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbSlot6.Image = global::Elemential.Properties.Resources.Place;
-            this.pbSlot6.Location = new System.Drawing.Point(510, 451);
-            this.pbSlot6.Name = "pbSlot6";
-            this.pbSlot6.Size = new System.Drawing.Size(129, 200);
-            this.pbSlot6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbSlot6.TabIndex = 5;
-            this.pbSlot6.TabStop = false;
-            this.pbSlot6.Visible = false;
-            this.pbSlot6.Click += new System.EventHandler(this.CardClick);
-            this.pbSlot6.MouseEnter += new System.EventHandler(this.EnterCard);
-            this.pbSlot6.MouseLeave += new System.EventHandler(this.LeaveCard);
+            pbSlot6.BackColor = System.Drawing.Color.Transparent;
+            pbSlot6.Cursor = Cursors.Hand;
+            pbSlot6.Image = Properties.Resources.Place;
+            pbSlot6.Location = new System.Drawing.Point(510, 451);
+            pbSlot6.Name = "pbSlot6";
+            pbSlot6.Size = new System.Drawing.Size(129, 200);
+            pbSlot6.SizeMode = PictureBoxSizeMode.Zoom;
+            pbSlot6.TabIndex = 5;
+            pbSlot6.TabStop = false;
+            pbSlot6.Visible = false;
+            pbSlot6.Click += CardClick;
+            pbSlot6.MouseEnter += EnterCard;
+            pbSlot6.MouseLeave += LeaveCard;
             // 
             // pbSlot7
             // 
-            this.pbSlot7.BackColor = System.Drawing.Color.Transparent;
-            this.pbSlot7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbSlot7.Image = global::Elemential.Properties.Resources.Place;
-            this.pbSlot7.Location = new System.Drawing.Point(594, 451);
-            this.pbSlot7.Name = "pbSlot7";
-            this.pbSlot7.Size = new System.Drawing.Size(129, 200);
-            this.pbSlot7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbSlot7.TabIndex = 6;
-            this.pbSlot7.TabStop = false;
-            this.pbSlot7.Visible = false;
-            this.pbSlot7.Click += new System.EventHandler(this.CardClick);
-            this.pbSlot7.MouseEnter += new System.EventHandler(this.EnterCard);
-            this.pbSlot7.MouseLeave += new System.EventHandler(this.LeaveCard);
+            pbSlot7.BackColor = System.Drawing.Color.Transparent;
+            pbSlot7.Cursor = Cursors.Hand;
+            pbSlot7.Image = Properties.Resources.Place;
+            pbSlot7.Location = new System.Drawing.Point(594, 451);
+            pbSlot7.Name = "pbSlot7";
+            pbSlot7.Size = new System.Drawing.Size(129, 200);
+            pbSlot7.SizeMode = PictureBoxSizeMode.Zoom;
+            pbSlot7.TabIndex = 6;
+            pbSlot7.TabStop = false;
+            pbSlot7.Visible = false;
+            pbSlot7.Click += CardClick;
+            pbSlot7.MouseEnter += EnterCard;
+            pbSlot7.MouseLeave += LeaveCard;
             // 
             // pbSlot8
             // 
-            this.pbSlot8.BackColor = System.Drawing.Color.Transparent;
-            this.pbSlot8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbSlot8.Image = global::Elemential.Properties.Resources.Place;
-            this.pbSlot8.Location = new System.Drawing.Point(678, 451);
-            this.pbSlot8.Name = "pbSlot8";
-            this.pbSlot8.Size = new System.Drawing.Size(129, 200);
-            this.pbSlot8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbSlot8.TabIndex = 7;
-            this.pbSlot8.TabStop = false;
-            this.pbSlot8.Visible = false;
-            this.pbSlot8.Click += new System.EventHandler(this.CardClick);
-            this.pbSlot8.MouseEnter += new System.EventHandler(this.EnterCard);
-            this.pbSlot8.MouseLeave += new System.EventHandler(this.LeaveCard);
+            pbSlot8.BackColor = System.Drawing.Color.Transparent;
+            pbSlot8.Cursor = Cursors.Hand;
+            pbSlot8.Image = Properties.Resources.Place;
+            pbSlot8.Location = new System.Drawing.Point(678, 451);
+            pbSlot8.Name = "pbSlot8";
+            pbSlot8.Size = new System.Drawing.Size(129, 200);
+            pbSlot8.SizeMode = PictureBoxSizeMode.Zoom;
+            pbSlot8.TabIndex = 7;
+            pbSlot8.TabStop = false;
+            pbSlot8.Visible = false;
+            pbSlot8.Click += CardClick;
+            pbSlot8.MouseEnter += EnterCard;
+            pbSlot8.MouseLeave += LeaveCard;
             // 
             // pbSlot9
             // 
-            this.pbSlot9.BackColor = System.Drawing.Color.Transparent;
-            this.pbSlot9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbSlot9.Image = global::Elemential.Properties.Resources.Place;
-            this.pbSlot9.Location = new System.Drawing.Point(762, 451);
-            this.pbSlot9.Name = "pbSlot9";
-            this.pbSlot9.Size = new System.Drawing.Size(129, 200);
-            this.pbSlot9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbSlot9.TabIndex = 8;
-            this.pbSlot9.TabStop = false;
-            this.pbSlot9.Visible = false;
-            this.pbSlot9.Click += new System.EventHandler(this.CardClick);
-            this.pbSlot9.MouseEnter += new System.EventHandler(this.EnterCard);
-            this.pbSlot9.MouseLeave += new System.EventHandler(this.LeaveCard);
+            pbSlot9.BackColor = System.Drawing.Color.Transparent;
+            pbSlot9.Cursor = Cursors.Hand;
+            pbSlot9.Image = Properties.Resources.Place;
+            pbSlot9.Location = new System.Drawing.Point(762, 451);
+            pbSlot9.Name = "pbSlot9";
+            pbSlot9.Size = new System.Drawing.Size(129, 200);
+            pbSlot9.SizeMode = PictureBoxSizeMode.Zoom;
+            pbSlot9.TabIndex = 8;
+            pbSlot9.TabStop = false;
+            pbSlot9.Visible = false;
+            pbSlot9.Click += CardClick;
+            pbSlot9.MouseEnter += EnterCard;
+            pbSlot9.MouseLeave += LeaveCard;
             // 
             // pbOpponent
             // 
-            this.pbOpponent.BackColor = System.Drawing.Color.Transparent;
-            this.pbOpponent.Image = global::Elemential.Properties.Resources.Place;
-            this.pbOpponent.Location = new System.Drawing.Point(5, 5);
-            this.pbOpponent.Name = "pbOpponent";
-            this.pbOpponent.Size = new System.Drawing.Size(129, 200);
-            this.pbOpponent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbOpponent.TabIndex = 9;
-            this.pbOpponent.TabStop = false;
+            pbOpponent.Image = Properties.Resources.Place;
+            pbOpponent.Location = new System.Drawing.Point(351, 150);
+            pbOpponent.Name = "pbOpponent";
+            pbOpponent.Size = new System.Drawing.Size(129, 200);
+            pbOpponent.SizeMode = PictureBoxSizeMode.Zoom;
+            pbOpponent.TabIndex = 9;
+            pbOpponent.TabStop = false;
             // 
             // pbMe
             // 
-            this.pbMe.BackColor = System.Drawing.Color.Transparent;
-            this.pbMe.Image = global::Elemential.Properties.Resources.Place;
-            this.pbMe.Location = new System.Drawing.Point(5, 5);
-            this.pbMe.Name = "pbMe";
-            this.pbMe.Size = new System.Drawing.Size(129, 200);
-            this.pbMe.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbMe.TabIndex = 10;
-            this.pbMe.TabStop = false;
-            // 
-            // pbBack
-            // 
-            this.pbBack.BackColor = System.Drawing.Color.Transparent;
-            this.pbBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbBack.Image = global::Elemential.Properties.Resources.back;
-            this.pbBack.Location = new System.Drawing.Point(18, 504);
-            this.pbBack.Name = "pbBack";
-            this.pbBack.Size = new System.Drawing.Size(60, 60);
-            this.pbBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbBack.TabIndex = 11;
-            this.pbBack.TabStop = false;
-            this.pbBack.Visible = false;
-            this.pbBack.Click += new System.EventHandler(this.pbBack_Click);
-            // 
-            // pbForward
-            // 
-            this.pbForward.BackColor = System.Drawing.Color.Transparent;
-            this.pbForward.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbForward.Image = global::Elemential.Properties.Resources.forward;
-            this.pbForward.Location = new System.Drawing.Point(903, 504);
-            this.pbForward.Name = "pbForward";
-            this.pbForward.Size = new System.Drawing.Size(60, 60);
-            this.pbForward.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbForward.TabIndex = 12;
-            this.pbForward.TabStop = false;
-            this.pbForward.Visible = false;
-            this.pbForward.Click += new System.EventHandler(this.pbForward_Click);
+            pbMe.BackColor = System.Drawing.Color.Transparent;
+            pbMe.Image = Properties.Resources.Place;
+            pbMe.Location = new System.Drawing.Point(508, 149);
+            pbMe.Name = "pbMe";
+            pbMe.Size = new System.Drawing.Size(129, 200);
+            pbMe.SizeMode = PictureBoxSizeMode.Zoom;
+            pbMe.TabIndex = 10;
+            pbMe.TabStop = false;
             // 
             // lblPlayer
             // 
-            this.lblPlayer.AutoSize = true;
-            this.lblPlayer.BackColor = System.Drawing.Color.Transparent;
-            this.lblPlayer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblPlayer.Location = new System.Drawing.Point(90, 420);
-            this.lblPlayer.Name = "lblPlayer";
-            this.lblPlayer.Size = new System.Drawing.Size(86, 21);
-            this.lblPlayer.TabIndex = 13;
-            this.lblPlayer.Text = "Jogador X";
+            lblPlayer.AutoSize = true;
+            lblPlayer.BackColor = System.Drawing.Color.Transparent;
+            lblPlayer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            lblPlayer.Location = new System.Drawing.Point(90, 420);
+            lblPlayer.Name = "lblPlayer";
+            lblPlayer.Size = new System.Drawing.Size(86, 21);
+            lblPlayer.TabIndex = 13;
+            lblPlayer.Text = "Jogador X";
             // 
             // pbOSlot1
             // 
-            this.pbOSlot1.BackColor = System.Drawing.Color.Transparent;
-            this.pbOSlot1.Image = global::Elemential.Properties.Resources.Card;
-            this.pbOSlot1.Location = new System.Drawing.Point(697, -75);
-            this.pbOSlot1.Name = "pbOSlot1";
-            this.pbOSlot1.Size = new System.Drawing.Size(97, 150);
-            this.pbOSlot1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbOSlot1.TabIndex = 14;
-            this.pbOSlot1.TabStop = false;
-            this.pbOSlot1.Visible = false;
+            pbOSlot1.BackColor = System.Drawing.Color.Transparent;
+            pbOSlot1.Image = Properties.Resources.Card;
+            pbOSlot1.Location = new System.Drawing.Point(697, -75);
+            pbOSlot1.Name = "pbOSlot1";
+            pbOSlot1.Size = new System.Drawing.Size(97, 150);
+            pbOSlot1.SizeMode = PictureBoxSizeMode.Zoom;
+            pbOSlot1.TabIndex = 14;
+            pbOSlot1.TabStop = false;
+            pbOSlot1.Visible = false;
             // 
             // pbOSlot2
             // 
-            this.pbOSlot2.BackColor = System.Drawing.Color.Transparent;
-            this.pbOSlot2.Image = global::Elemential.Properties.Resources.Card;
-            this.pbOSlot2.Location = new System.Drawing.Point(634, -75);
-            this.pbOSlot2.Name = "pbOSlot2";
-            this.pbOSlot2.Size = new System.Drawing.Size(97, 150);
-            this.pbOSlot2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbOSlot2.TabIndex = 15;
-            this.pbOSlot2.TabStop = false;
-            this.pbOSlot2.Visible = false;
+            pbOSlot2.BackColor = System.Drawing.Color.Transparent;
+            pbOSlot2.Image = Properties.Resources.Card;
+            pbOSlot2.Location = new System.Drawing.Point(634, -75);
+            pbOSlot2.Name = "pbOSlot2";
+            pbOSlot2.Size = new System.Drawing.Size(97, 150);
+            pbOSlot2.SizeMode = PictureBoxSizeMode.Zoom;
+            pbOSlot2.TabIndex = 15;
+            pbOSlot2.TabStop = false;
+            pbOSlot2.Visible = false;
             // 
             // pbOSlot3
             // 
-            this.pbOSlot3.BackColor = System.Drawing.Color.Transparent;
-            this.pbOSlot3.Image = global::Elemential.Properties.Resources.Card;
-            this.pbOSlot3.Location = new System.Drawing.Point(571, -75);
-            this.pbOSlot3.Name = "pbOSlot3";
-            this.pbOSlot3.Size = new System.Drawing.Size(97, 150);
-            this.pbOSlot3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbOSlot3.TabIndex = 16;
-            this.pbOSlot3.TabStop = false;
-            this.pbOSlot3.Visible = false;
+            pbOSlot3.BackColor = System.Drawing.Color.Transparent;
+            pbOSlot3.Image = Properties.Resources.Card;
+            pbOSlot3.Location = new System.Drawing.Point(571, -75);
+            pbOSlot3.Name = "pbOSlot3";
+            pbOSlot3.Size = new System.Drawing.Size(97, 150);
+            pbOSlot3.SizeMode = PictureBoxSizeMode.Zoom;
+            pbOSlot3.TabIndex = 16;
+            pbOSlot3.TabStop = false;
+            pbOSlot3.Visible = false;
             // 
             // pbOSlot4
             // 
-            this.pbOSlot4.BackColor = System.Drawing.Color.Transparent;
-            this.pbOSlot4.Image = global::Elemential.Properties.Resources.Card;
-            this.pbOSlot4.Location = new System.Drawing.Point(508, -75);
-            this.pbOSlot4.Name = "pbOSlot4";
-            this.pbOSlot4.Size = new System.Drawing.Size(97, 150);
-            this.pbOSlot4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbOSlot4.TabIndex = 17;
-            this.pbOSlot4.TabStop = false;
-            this.pbOSlot4.Visible = false;
+            pbOSlot4.BackColor = System.Drawing.Color.Transparent;
+            pbOSlot4.Image = Properties.Resources.Card;
+            pbOSlot4.Location = new System.Drawing.Point(508, -75);
+            pbOSlot4.Name = "pbOSlot4";
+            pbOSlot4.Size = new System.Drawing.Size(97, 150);
+            pbOSlot4.SizeMode = PictureBoxSizeMode.Zoom;
+            pbOSlot4.TabIndex = 17;
+            pbOSlot4.TabStop = false;
+            pbOSlot4.Visible = false;
             // 
             // pbOSlot5
             // 
-            this.pbOSlot5.BackColor = System.Drawing.Color.Transparent;
-            this.pbOSlot5.Image = global::Elemential.Properties.Resources.Card;
-            this.pbOSlot5.Location = new System.Drawing.Point(445, -75);
-            this.pbOSlot5.Name = "pbOSlot5";
-            this.pbOSlot5.Size = new System.Drawing.Size(97, 150);
-            this.pbOSlot5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbOSlot5.TabIndex = 18;
-            this.pbOSlot5.TabStop = false;
-            this.pbOSlot5.Visible = false;
+            pbOSlot5.BackColor = System.Drawing.Color.Transparent;
+            pbOSlot5.Image = Properties.Resources.Card;
+            pbOSlot5.Location = new System.Drawing.Point(445, -75);
+            pbOSlot5.Name = "pbOSlot5";
+            pbOSlot5.Size = new System.Drawing.Size(97, 150);
+            pbOSlot5.SizeMode = PictureBoxSizeMode.Zoom;
+            pbOSlot5.TabIndex = 18;
+            pbOSlot5.TabStop = false;
+            pbOSlot5.Visible = false;
             // 
             // pbOSlot6
             // 
-            this.pbOSlot6.BackColor = System.Drawing.Color.Transparent;
-            this.pbOSlot6.Image = global::Elemential.Properties.Resources.Card;
-            this.pbOSlot6.Location = new System.Drawing.Point(382, -75);
-            this.pbOSlot6.Name = "pbOSlot6";
-            this.pbOSlot6.Size = new System.Drawing.Size(97, 150);
-            this.pbOSlot6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbOSlot6.TabIndex = 19;
-            this.pbOSlot6.TabStop = false;
-            this.pbOSlot6.Visible = false;
+            pbOSlot6.BackColor = System.Drawing.Color.Transparent;
+            pbOSlot6.Image = Properties.Resources.Card;
+            pbOSlot6.Location = new System.Drawing.Point(382, -75);
+            pbOSlot6.Name = "pbOSlot6";
+            pbOSlot6.Size = new System.Drawing.Size(97, 150);
+            pbOSlot6.SizeMode = PictureBoxSizeMode.Zoom;
+            pbOSlot6.TabIndex = 19;
+            pbOSlot6.TabStop = false;
+            pbOSlot6.Visible = false;
             // 
             // pbOSlot7
             // 
-            this.pbOSlot7.BackColor = System.Drawing.Color.Transparent;
-            this.pbOSlot7.Image = global::Elemential.Properties.Resources.Card;
-            this.pbOSlot7.Location = new System.Drawing.Point(319, -75);
-            this.pbOSlot7.Name = "pbOSlot7";
-            this.pbOSlot7.Size = new System.Drawing.Size(97, 150);
-            this.pbOSlot7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbOSlot7.TabIndex = 20;
-            this.pbOSlot7.TabStop = false;
-            this.pbOSlot7.Visible = false;
+            pbOSlot7.BackColor = System.Drawing.Color.Transparent;
+            pbOSlot7.Image = Properties.Resources.Card;
+            pbOSlot7.Location = new System.Drawing.Point(319, -75);
+            pbOSlot7.Name = "pbOSlot7";
+            pbOSlot7.Size = new System.Drawing.Size(97, 150);
+            pbOSlot7.SizeMode = PictureBoxSizeMode.Zoom;
+            pbOSlot7.TabIndex = 20;
+            pbOSlot7.TabStop = false;
+            pbOSlot7.Visible = false;
             // 
             // pbOSlot8
             // 
-            this.pbOSlot8.BackColor = System.Drawing.Color.Transparent;
-            this.pbOSlot8.Image = global::Elemential.Properties.Resources.Card;
-            this.pbOSlot8.Location = new System.Drawing.Point(256, -75);
-            this.pbOSlot8.Name = "pbOSlot8";
-            this.pbOSlot8.Size = new System.Drawing.Size(97, 150);
-            this.pbOSlot8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbOSlot8.TabIndex = 21;
-            this.pbOSlot8.TabStop = false;
-            this.pbOSlot8.Visible = false;
+            pbOSlot8.BackColor = System.Drawing.Color.Transparent;
+            pbOSlot8.Image = Properties.Resources.Card;
+            pbOSlot8.Location = new System.Drawing.Point(256, -75);
+            pbOSlot8.Name = "pbOSlot8";
+            pbOSlot8.Size = new System.Drawing.Size(97, 150);
+            pbOSlot8.SizeMode = PictureBoxSizeMode.Zoom;
+            pbOSlot8.TabIndex = 21;
+            pbOSlot8.TabStop = false;
+            pbOSlot8.Visible = false;
             // 
             // pbOSlot9
             // 
-            this.pbOSlot9.BackColor = System.Drawing.Color.Transparent;
-            this.pbOSlot9.Image = global::Elemential.Properties.Resources.Card;
-            this.pbOSlot9.Location = new System.Drawing.Point(193, -75);
-            this.pbOSlot9.Name = "pbOSlot9";
-            this.pbOSlot9.Size = new System.Drawing.Size(97, 150);
-            this.pbOSlot9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbOSlot9.TabIndex = 22;
-            this.pbOSlot9.TabStop = false;
-            this.pbOSlot9.Visible = false;
+            pbOSlot9.BackColor = System.Drawing.Color.Transparent;
+            pbOSlot9.Image = Properties.Resources.Card;
+            pbOSlot9.Location = new System.Drawing.Point(193, -75);
+            pbOSlot9.Name = "pbOSlot9";
+            pbOSlot9.Size = new System.Drawing.Size(97, 150);
+            pbOSlot9.SizeMode = PictureBoxSizeMode.Zoom;
+            pbOSlot9.TabIndex = 22;
+            pbOSlot9.TabStop = false;
+            pbOSlot9.Visible = false;
             // 
             // lblMyTurn
             // 
-            this.lblMyTurn.AutoSize = true;
-            this.lblMyTurn.BackColor = System.Drawing.Color.Transparent;
-            this.lblMyTurn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMyTurn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(188)))), ((int)(((byte)(239)))));
-            this.lblMyTurn.Location = new System.Drawing.Point(193, 420);
-            this.lblMyTurn.Name = "lblMyTurn";
-            this.lblMyTurn.Size = new System.Drawing.Size(97, 21);
-            this.lblMyTurn.TabIndex = 23;
-            this.lblMyTurn.Text = "É a sua vez!";
-            this.lblMyTurn.Visible = false;
+            lblMyTurn.AutoSize = true;
+            lblMyTurn.BackColor = System.Drawing.Color.Transparent;
+            lblMyTurn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            lblMyTurn.ForeColor = System.Drawing.Color.FromArgb(50, 188, 239);
+            lblMyTurn.Location = new System.Drawing.Point(193, 420);
+            lblMyTurn.Name = "lblMyTurn";
+            lblMyTurn.Size = new System.Drawing.Size(97, 21);
+            lblMyTurn.TabIndex = 23;
+            lblMyTurn.Text = "É a sua vez!";
+            lblMyTurn.Visible = false;
             // 
             // pbEnergy
             // 
-            this.pbEnergy.BackColor = System.Drawing.Color.Transparent;
-            this.pbEnergy.Image = global::Elemential.Properties.Resources.EnergySprite;
-            this.pbEnergy.Location = new System.Drawing.Point(745, 181);
-            this.pbEnergy.Name = "pbEnergy";
-            this.pbEnergy.Size = new System.Drawing.Size(60, 60);
-            this.pbEnergy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbEnergy.TabIndex = 24;
-            this.pbEnergy.TabStop = false;
-            this.pbEnergy.Visible = false;
+            pbEnergy.BackColor = System.Drawing.Color.Transparent;
+            pbEnergy.Image = Properties.Resources.EnergySprite;
+            pbEnergy.Location = new System.Drawing.Point(745, 181);
+            pbEnergy.Name = "pbEnergy";
+            pbEnergy.Size = new System.Drawing.Size(60, 60);
+            pbEnergy.SizeMode = PictureBoxSizeMode.Zoom;
+            pbEnergy.TabIndex = 24;
+            pbEnergy.TabStop = false;
+            pbEnergy.Visible = false;
             // 
             // pbNature
             // 
-            this.pbNature.BackColor = System.Drawing.Color.Transparent;
-            this.pbNature.Image = global::Elemential.Properties.Resources.NatureSprite;
-            this.pbNature.Location = new System.Drawing.Point(745, 261);
-            this.pbNature.Name = "pbNature";
-            this.pbNature.Size = new System.Drawing.Size(60, 60);
-            this.pbNature.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbNature.TabIndex = 25;
-            this.pbNature.TabStop = false;
-            this.pbNature.Visible = false;
+            pbNature.BackColor = System.Drawing.Color.Transparent;
+            pbNature.Image = Properties.Resources.NatureSprite;
+            pbNature.Location = new System.Drawing.Point(745, 261);
+            pbNature.Name = "pbNature";
+            pbNature.Size = new System.Drawing.Size(60, 60);
+            pbNature.SizeMode = PictureBoxSizeMode.Zoom;
+            pbNature.TabIndex = 25;
+            pbNature.TabStop = false;
+            pbNature.Visible = false;
             // 
             // pbWind
             // 
-            this.pbWind.BackColor = System.Drawing.Color.Transparent;
-            this.pbWind.Image = global::Elemential.Properties.Resources.WindSprite;
-            this.pbWind.Location = new System.Drawing.Point(825, 181);
-            this.pbWind.Name = "pbWind";
-            this.pbWind.Size = new System.Drawing.Size(60, 60);
-            this.pbWind.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbWind.TabIndex = 26;
-            this.pbWind.TabStop = false;
-            this.pbWind.Visible = false;
+            pbWind.BackColor = System.Drawing.Color.Transparent;
+            pbWind.Image = Properties.Resources.WindSprite;
+            pbWind.Location = new System.Drawing.Point(825, 181);
+            pbWind.Name = "pbWind";
+            pbWind.Size = new System.Drawing.Size(60, 60);
+            pbWind.SizeMode = PictureBoxSizeMode.Zoom;
+            pbWind.TabIndex = 26;
+            pbWind.TabStop = false;
+            pbWind.Visible = false;
             // 
             // pbSparkle
             // 
-            this.pbSparkle.BackColor = System.Drawing.Color.Transparent;
-            this.pbSparkle.Image = global::Elemential.Properties.Resources.SparkleSprite;
-            this.pbSparkle.Location = new System.Drawing.Point(825, 261);
-            this.pbSparkle.Name = "pbSparkle";
-            this.pbSparkle.Size = new System.Drawing.Size(60, 60);
-            this.pbSparkle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbSparkle.TabIndex = 27;
-            this.pbSparkle.TabStop = false;
-            this.pbSparkle.Visible = false;
-            // 
-            // pOpponent
-            // 
-            this.pOpponent.BackColor = System.Drawing.Color.Transparent;
-            this.pOpponent.Controls.Add(this.pbOpponent);
-            this.pOpponent.Location = new System.Drawing.Point(346, 145);
-            this.pOpponent.Name = "pOpponent";
-            this.pOpponent.Size = new System.Drawing.Size(139, 210);
-            this.pOpponent.TabIndex = 28;
-            // 
-            // pMe
-            // 
-            this.pMe.BackColor = System.Drawing.Color.Transparent;
-            this.pMe.Controls.Add(this.pbMe);
-            this.pMe.Location = new System.Drawing.Point(504, 145);
-            this.pMe.Name = "pMe";
-            this.pMe.Size = new System.Drawing.Size(139, 210);
-            this.pMe.TabIndex = 29;
+            pbSparkle.BackColor = System.Drawing.Color.Transparent;
+            pbSparkle.Image = Properties.Resources.SparkleSprite;
+            pbSparkle.Location = new System.Drawing.Point(825, 261);
+            pbSparkle.Name = "pbSparkle";
+            pbSparkle.Size = new System.Drawing.Size(60, 60);
+            pbSparkle.SizeMode = PictureBoxSizeMode.Zoom;
+            pbSparkle.TabIndex = 27;
+            pbSparkle.TabStop = false;
+            pbSparkle.Visible = false;
             // 
             // pbWinLose
             // 
-            this.pbWinLose.BackColor = System.Drawing.Color.Transparent;
-            this.pbWinLose.Location = new System.Drawing.Point(100, 181);
-            this.pbWinLose.Name = "pbWinLose";
-            this.pbWinLose.Size = new System.Drawing.Size(140, 140);
-            this.pbWinLose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbWinLose.TabIndex = 30;
-            this.pbWinLose.TabStop = false;
+            pbWinLose.BackColor = System.Drawing.Color.Transparent;
+            pbWinLose.Location = new System.Drawing.Point(100, 181);
+            pbWinLose.Name = "pbWinLose";
+            pbWinLose.Size = new System.Drawing.Size(140, 140);
+            pbWinLose.SizeMode = PictureBoxSizeMode.Zoom;
+            pbWinLose.TabIndex = 30;
+            pbWinLose.TabStop = false;
+            // 
+            // btnForward
+            // 
+            btnForward.BackColor = System.Drawing.SystemColors.Control;
+            btnForward.BackgroundImage = Properties.Resources.forward;
+            btnForward.BackgroundImageLayout = ImageLayout.Zoom;
+            btnForward.BorderColor = System.Drawing.SystemColors.ActiveBorder;
+            btnForward.BorderRadius = 10;
+            btnForward.BorderSize = 0;
+            btnForward.FlatAppearance.BorderSize = 0;
+            btnForward.FlatStyle = FlatStyle.Flat;
+            btnForward.ForeColor = System.Drawing.SystemColors.ControlText;
+            btnForward.Location = new System.Drawing.Point(903, 504);
+            btnForward.Name = "btnForward";
+            btnForward.Size = new System.Drawing.Size(60, 60);
+            btnForward.TabIndex = 31;
+            btnForward.UseVisualStyleBackColor = false;
+            btnForward.Click += btnForward_Click;
+            // 
+            // btnBack
+            // 
+            btnBack.BackColor = System.Drawing.SystemColors.Control;
+            btnBack.BackgroundImage = Properties.Resources.back;
+            btnBack.BackgroundImageLayout = ImageLayout.Zoom;
+            btnBack.BorderColor = System.Drawing.SystemColors.ActiveBorder;
+            btnBack.BorderRadius = 10;
+            btnBack.BorderSize = 0;
+            btnBack.FlatAppearance.BorderSize = 0;
+            btnBack.FlatStyle = FlatStyle.Flat;
+            btnBack.ForeColor = System.Drawing.SystemColors.ControlText;
+            btnBack.Location = new System.Drawing.Point(18, 504);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new System.Drawing.Size(60, 60);
+            btnBack.TabIndex = 32;
+            btnBack.UseVisualStyleBackColor = false;
+            btnBack.Click += btnBack_Click;
+            // 
+            // btnOpponent
+            // 
+            btnOpponent.BorderColor = System.Drawing.Color.Empty;
+            btnOpponent.BorderRadius = 10;
+            btnOpponent.BorderSize = 0;
+            btnOpponent.FlatAppearance.BorderSize = 0;
+            btnOpponent.FlatStyle = FlatStyle.Flat;
+            btnOpponent.ForeColor = System.Drawing.SystemColors.ControlText;
+            btnOpponent.Location = new System.Drawing.Point(345, 144);
+            btnOpponent.Name = "btnOpponent";
+            btnOpponent.Size = new System.Drawing.Size(140, 211);
+            btnOpponent.TabIndex = 33;
+            btnOpponent.UseVisualStyleBackColor = false;
+            // 
+            // btnMe
+            // 
+            btnMe.BorderColor = System.Drawing.Color.Empty;
+            btnMe.BorderRadius = 10;
+            btnMe.BorderSize = 0;
+            btnMe.FlatAppearance.BorderSize = 0;
+            btnMe.FlatStyle = FlatStyle.Flat;
+            btnMe.ForeColor = System.Drawing.SystemColors.ControlText;
+            btnMe.Location = new System.Drawing.Point(503, 144);
+            btnMe.Name = "btnMe";
+            btnMe.Size = new System.Drawing.Size(140, 211);
+            btnMe.TabIndex = 34;
+            btnMe.UseVisualStyleBackColor = false;
             // 
             // Game
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 611);
-            this.Controls.Add(this.pbWinLose);
-            this.Controls.Add(this.pMe);
-            this.Controls.Add(this.pOpponent);
-            this.Controls.Add(this.pbSparkle);
-            this.Controls.Add(this.pbWind);
-            this.Controls.Add(this.pbNature);
-            this.Controls.Add(this.pbEnergy);
-            this.Controls.Add(this.lblMyTurn);
-            this.Controls.Add(this.pbOSlot9);
-            this.Controls.Add(this.pbOSlot8);
-            this.Controls.Add(this.pbOSlot7);
-            this.Controls.Add(this.pbOSlot6);
-            this.Controls.Add(this.pbOSlot5);
-            this.Controls.Add(this.pbOSlot4);
-            this.Controls.Add(this.pbOSlot3);
-            this.Controls.Add(this.pbOSlot2);
-            this.Controls.Add(this.pbOSlot1);
-            this.Controls.Add(this.lblPlayer);
-            this.Controls.Add(this.pbForward);
-            this.Controls.Add(this.pbBack);
-            this.Controls.Add(this.pbSlot9);
-            this.Controls.Add(this.pbSlot8);
-            this.Controls.Add(this.pbSlot7);
-            this.Controls.Add(this.pbSlot6);
-            this.Controls.Add(this.pbSlot5);
-            this.Controls.Add(this.pbSlot4);
-            this.Controls.Add(this.pbSlot3);
-            this.Controls.Add(this.pbSlot2);
-            this.Controls.Add(this.pbSlot1);
-            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.Name = "Game";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Elemential";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Game_FormClosing);
-            this.Load += new System.EventHandler(this.Game_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pbSlot1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSlot2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSlot3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSlot4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSlot5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSlot6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSlot7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSlot8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSlot9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbOpponent)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMe)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbBack)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbForward)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbOSlot1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbOSlot2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbOSlot3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbOSlot4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbOSlot5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbOSlot6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbOSlot7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbOSlot8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbOSlot9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbEnergy)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbNature)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbWind)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSparkle)).EndInit();
-            this.pOpponent.ResumeLayout(false);
-            this.pMe.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbWinLose)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(984, 611);
+            Controls.Add(pbMe);
+            Controls.Add(btnMe);
+            Controls.Add(pbOpponent);
+            Controls.Add(btnOpponent);
+            Controls.Add(btnBack);
+            Controls.Add(btnForward);
+            Controls.Add(pbWinLose);
+            Controls.Add(pbSparkle);
+            Controls.Add(pbWind);
+            Controls.Add(pbNature);
+            Controls.Add(pbEnergy);
+            Controls.Add(lblMyTurn);
+            Controls.Add(pbOSlot9);
+            Controls.Add(pbOSlot8);
+            Controls.Add(pbOSlot7);
+            Controls.Add(pbOSlot6);
+            Controls.Add(pbOSlot5);
+            Controls.Add(pbOSlot4);
+            Controls.Add(pbOSlot3);
+            Controls.Add(pbOSlot2);
+            Controls.Add(pbOSlot1);
+            Controls.Add(lblPlayer);
+            Controls.Add(pbSlot9);
+            Controls.Add(pbSlot8);
+            Controls.Add(pbSlot7);
+            Controls.Add(pbSlot6);
+            Controls.Add(pbSlot5);
+            Controls.Add(pbSlot4);
+            Controls.Add(pbSlot3);
+            Controls.Add(pbSlot2);
+            Controls.Add(pbSlot1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            Name = "Game";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Elemential";
+            FormClosing += Game_FormClosing;
+            Load += Game_Load;
+            ((System.ComponentModel.ISupportInitialize)pbSlot1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbSlot2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbSlot3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbSlot4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbSlot5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbSlot6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbSlot7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbSlot8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbSlot9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbOpponent).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbMe).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbOSlot1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbOSlot2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbOSlot3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbOSlot4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbOSlot5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbOSlot6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbOSlot7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbOSlot8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbOSlot9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbEnergy).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbNature).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbWind).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbSparkle).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbWinLose).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -583,8 +594,6 @@
         private PictureBox pbSlot9;
         private PictureBox pbOpponent;
         private PictureBox pbMe;
-        private PictureBox pbBack;
-        private PictureBox pbForward;
         private Label lblPlayer;
         private PictureBox pbOSlot1;
         private PictureBox pbOSlot2;
@@ -600,8 +609,10 @@
         private PictureBox pbNature;
         private PictureBox pbWind;
         private PictureBox pbSparkle;
-        private Panel pOpponent;
-        private Panel pMe;
         private PictureBox pbWinLose;
+        private Components.RoundedButton btnForward;
+        private Components.RoundedButton btnBack;
+        private Components.RoundedButton btnOpponent;
+        private Components.RoundedButton btnMe;
     }
 }

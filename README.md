@@ -36,6 +36,8 @@
 
 Elemential é um jogo desktop para 2 jogadores em que o objetivo é ser o primeiro jogador a ficar sem cartas. O jogo consiste em um baralho com cartas de 3 elementos (fogo, água e gelo) em que cada elemento vence outro numa cadeia círcular. Existem também 4 tipos de cartas especiais que alteram os resultados do jogo.
 
+Uma versão melhorada está disponível (em inglês): [CosmoChamp](https://github.com/D3W10/CosmoChamp)
+
 <br />
 
 ### Feito Com

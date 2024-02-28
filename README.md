@@ -62,7 +62,7 @@ Para começar a jogar o jogo, dirija-se à [página de download](https://github.
 
 Para executar o jogo é preciso:
 
-- Um computar que executa Windows:
+- Um computador que executa Windows:
     - Windows 7 or superior;
 - Ter o .NET 7 instalado.
 

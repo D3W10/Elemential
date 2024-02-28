@@ -54,7 +54,7 @@ Elemential é um jogo *desktop* para 2 jogadores em que o objetivo é ser o prim
 
 ## Primeiros passos
 
-Para começar a usar jogar o jogo, dirija-se à [página de download](https://github.com/D3W10/Elemential/releases) e transfira a versão mais recente.
+Para começar a jogar o jogo, dirija-se à [página de download](https://github.com/D3W10/Elemential/releases) e transfira a versão mais recente.
 
 <br />
 
